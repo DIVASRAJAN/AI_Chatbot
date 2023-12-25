@@ -1,0 +1,127 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - s
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - done
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - fine
+    - good
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: book_restaurant
+  examples: |
+    - I want to book restaurant
+    - want to reserve a hotel
+    - reserve a retaurant
+    - I want to reserve restaurant
+    - I want to book hotel
+    - i want to book ahotel
+    - book hotel
+    - reserve hotel
+    - i want to reserve a table in a hotel
+- intent: user_location
+  examples: |
+    - I want to book restaurant at [kochi](place)
+    - want to reserve a hotel at [trivandrum](place)
+    - [palakkad](place)
+    - reserve at [calicut](place)
+    - [kochi](place)
+    - [trivandrum](place)
+    - [kochi](place)
+- intent: num_people
+  examples: |
+    - [5](number) people
+    - [six](number)
+    - book for [6](number)
+    - [7](number)
+    - [5](number)
+    - [seven](number)
+    - [4](number)
+    - [6](number)
+    - [5](number)
+- intent: rest_name
+  examples: |
+    - [taj hotel](hotel)
+    - [taj](hotel)
+    - [Alakapuri](hotel)
+    - [indian coffee house](hotel)
+    - [vox kitchen](hotel)
+    - [taj](hotel)

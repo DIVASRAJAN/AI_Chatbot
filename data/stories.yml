@@ -1,0 +1,123 @@
+version: "3.1"
+
+stories:
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_help
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_help
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_help
+  - intent: book_restaurant
+  - action: utter_location
+  - action: action_fetch_data_mysql
+  - intent: user_location
+    entities:
+    - place: kochi
+  - action: utter_rest_name
+  - action: action_fetch_hotel_mysql
+  - intent: rest_name
+    entities:
+    - hotel: taj
+  - slot_was_set:
+    - hotel: indian coffee house
+  - action: utter_people
+  - intent: num_people
+    entities:
+    - number: seven
+  - action: action_reservation_confirm
+  - intent: affirm
+  - action: utter_success
+
+- story: interactive_story_2
+  steps:
+  - intent: book_restaurant
+  - action: utter_location
+  - action: action_fetch_data_mysql
+  - intent: user_location
+    entities:
+    - place: palakkad
+  - action: utter_rest_name
+  - action: action_fetch_hotel_mysql
+  - intent: rest_name
+    entities:
+    - hotel: indian coffee house
+  - slot_was_set:
+    - hotel: indian coffee house
+  - action: utter_people
+  - intent: num_people
+    entities:
+    - number: '4'
+  - action: action_reservation_confirm
+  - intent: affirm
+  - action: utter_success
+
+- story: interactive_story_3
+  steps:
+  - intent: book_restaurant
+  - action: utter_location
+  - action: action_fetch_data_mysql
+  - intent: user_location
+    entities:
+    - place: trivandrum
+  - action: utter_rest_name
+  - action: action_fetch_hotel_mysql
+  - intent: rest_name
+    entities:
+    - hotel: vox kitchen
+  - action: utter_people
+  - intent: num_people
+    entities:
+    - number: '6'
+  - action: action_reservation_confirm
+  - intent: deny
+  - action: utter_location
+  - action: action_fetch_data_mysql
+  - intent: user_location
+    entities:
+    - place: kochi
+  - action: utter_rest_name
+  - action: action_fetch_hotel_mysql
+  - intent: rest_name
+    entities:
+    - hotel: taj
+  - slot_was_set:
+    - hotel: taj
+  - action: utter_people
+  - intent: num_people
+    entities:
+    - number: '5'
+  - action: action_reservation_confirm
+  - intent: affirm
+  - action: utter_success
